@@ -99,22 +99,17 @@ minetest.register_craftitem("moretrees:fir_nuts", {
 	on_use = minetest.item_eat(1),
 })
 
-for i in ipairs(moretrees.cutting_tools) do
-	local tool = moretrees.cutting_tools[i]
-	minetest.register_craft({
-		type = "shapeless",
-		output = "moretrees:coconut_milk",
-		recipe = {
-			"moretrees:coconut",
-			"vessels:drinking_glass",
-			tool
-		},
-		replacements = {
-			{ "moretrees:coconut", "moretrees:raw_coconut" },
-			{ tool, tool }
-		}
-	})
-end
+minetest.register_craft({
+	type = "shapeless",
+	output = "moretrees:coconut_milk",
+	recipe = {
+		"moretrees:coconut",
+		"vessels:drinking_glass",
+	},
+	replacements = {
+		{ "moretrees:coconut", "moretrees:raw_coconut" },
+	}
+})
 
 minetest.register_craft({
 	type = "shapeless",
